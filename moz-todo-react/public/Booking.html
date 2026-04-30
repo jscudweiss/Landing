@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserve a Table — Oy-Bagel</title>
+  <link rel="stylesheet" href="css/oy-bagel.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="booking-body">
+
+  <nav class="booking-nav">
+    <a href="/Home" class="nav-back">← Back to Menu</a>
+    <a href="/Home" class="nav-logo">Oy-Bagel</a>
+    <a class="nav-text">call us at 1(123)456-7890 <br>Oy Bagel, 28 Amity Street, Amherst MA</a>
+  </nav>
+
+  <main class="booking-main">
+
+    <aside class="booking-aside">
+      <div class="aside-inner">
+        <p class="aside-tag">Evening Seatings</p>
+        <h1 class="aside-title">Reserve<br><em>Your Table</em></h1>
+        <p class="aside-sub">
+          Join us for an evening of hand-crafted bagels, elevated schmears,
+          and the warm hum of a New York table. Seatings available
+          Wednesday through Sunday.
+        </p>
+        <div class="aside-details">
+          <div class="aside-detail-item">
+            <span class="detail-icon">◷</span>
+            <div>
+              <p class="detail-label">Hours</p>
+              <p class="detail-value">Wed–Sun, 5 pm – 11 pm</p>
+            </div>
+          </div>
+          <div class="aside-detail-item">
+            <span class="detail-icon">◍</span>
+            <div>
+              <p class="detail-label">Location</p>
+              <p class="detail-value">142 Delancey St, New York</p>
+            </div>
+          </div>
+          <div class="aside-detail-item">
+            <span class="detail-icon">✆</span>
+            <div>
+              <p class="detail-label">Phone</p>
+              <p class="detail-value">(212) 555-0198</p>
+            </div>
+          </div>
+        </div>
+        <div class="aside-rule"></div>
+        <p class="aside-note">
+          For parties of 8 or more, please call us directly.
+          Reservations held for 15 minutes past the booking time.
+        </p>
+      </div>
+    </aside>
+
+    <section class="booking-form-panel">
+      <div class="form-inner">
+
+        <div class="form-header">
+          <p class="form-step-label">Reservation Request</p>
+          <h2 class="form-title">When would you<br>like to visit?</h2>
+        </div>
+
+        <div class="steps-bar">
+          <div class="step active" id="step-ind-1">
+            <span class="step-num">1</span>
+            <span class="step-label">Details</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" id="step-ind-2">
+            <span class="step-num">2</span>
+            <span class="step-label">Date & Time</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" id="step-ind-3">
+            <span class="step-num">3</span>
+            <span class="step-label">Confirm</span>
+          </div>
+        </div>
+
+        <div class="form-step" id="step-1">
+          <div class="field-group">
+            <div class="field">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" placeholder="Sarah" autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" placeholder="Cohen" autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="sarah@example.com" autocomplete="email">
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="(212) 555-0100" autocomplete="tel">
+          </div>
+
+          <div class="field">
+            <label for="guests">Party Size</label>
+            <div class="guests-picker">
+              <button type="button" class="guest-btn" id="guests-minus">−</button>
+              <span class="guest-count" id="guest-display">2</span>
+              <button type="button" class="guest-btn" id="guests-plus">+</button>
+              <span class="guest-label" id="guest-label-text">guests</span>
+            </div>
+            <input type="hidden" id="guests" value="2">
+          </div>
+
+          <div class="field">
+            <label for="occasion">Occasion <span class="field-optional">(optional)</span></label>
+            <select id="occasion">
+              <option value="">Select an occasion…</option>
+              <option value="birthday">Birthday</option>
+              <option value="anniversary">Anniversary</option>
+              <option value="date">Date night</option>
+              <option value="business">Business dinner</option>
+              <option value="celebration">Celebration</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <button type="button" class="btn-next" id="btn-to-2">
+            Continue to Date & Time <span class="btn-arrow">→</span>
+          </button>
+        </div>
+
+        <div class="form-step hidden" id="step-2">
+
+          <div class="field">
+            <label>Select a Date</label>
+            <div class="calendar-wrap">
+              <div class="cal-header">
+                <button type="button" class="cal-nav" id="cal-prev">‹</button>
+                <span class="cal-month-label" id="cal-month-label"></span>
+                <button type="button" class="cal-nav" id="cal-next">›</button>
+              </div>
+              <div class="cal-days-header">
+                <span>Su</span><span>Mo</span><span>Tu</span>
+                <span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+              </div>
+              <div class="cal-grid" id="cal-grid"></div>
+            </div>
+            <input type="hidden" id="selected-date">
+          </div>
+
+          <!-- Time slots -->
+          <div class="field" id="time-field" style="display:none;">
+            <label>Select a Time</label>
+            <p class="time-date-display" id="time-date-display"></p>
+            <div class="time-slots" id="time-slots"></div>
+            <input type="hidden" id="selected-time">
+          </div>
+
+          <div class="step-buttons">
+            <button type="button" class="btn-back" id="btn-to-1">← Back</button>
+            <button type="button" class="btn-next" id="btn-to-3" disabled>
+              Review Booking <span class="btn-arrow">→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3: CONFIRM -->
+        <div class="form-step hidden" id="step-3">
+          <div class="confirm-card">
+            <p class="confirm-card-label">Your Reservation</p>
+            <div class="confirm-rows" id="confirm-rows"></div>
+          </div>
+
+          <div class="field">
+            <label for="notes">Special Requests <span class="field-optional">(optional)</span></label>
+            <textarea id="notes" rows="3" placeholder="Dietary requirements, highchair, allergies…"></textarea>
+          </div>
+
+          <div class="terms-row">
+            <input type="checkbox" id="terms">
+            <label for="terms" class="terms-label">
+              I understand reservations are held for 15 minutes and agree to the
+              <a href="#" class="terms-link">cancellation policy</a>.
+            </label>
+          </div>
+
+          <div class="step-buttons">
+            <button type="button" class="btn-back" id="btn-to-2b">← Back</button>
+            <button type="button" class="btn-submit" id="btn-submit">
+              Confirm Reservation
+            </button>
+          </div>
+        </div>
+
+        <div class="form-step hidden" id="step-success">
+          <div class="success-wrap">
+            <div class="success-icon">✓</div>
+            <h3 class="success-title">You're all set!</h3>
+            <p class="success-sub">
+              A confirmation has been sent to <strong id="confirm-email-display"></strong>.
+              We can't wait to welcome you.
+            </p>
+            <div class="confirm-card" style="margin-top:2rem;">
+              <p class="confirm-card-label">Reservation Summary</p>
+              <div class="confirm-rows" id="confirm-rows-success"></div>
+            </div>
+            <a href="/Home" class="btn-next"
+              style="display:inline-block;margin-top:2rem;text-decoration:none;text-align:center;">
+              Back to Menu
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="Booking.js"></script>
+</body>
+
+</html>
